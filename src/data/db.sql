@@ -17,9 +17,9 @@ CREATE TABLE medicos (
 
 INSERT INTO medicos (nombre, especialidad, perfil) 
 VALUES 
-  ('Jose Eusebio', 'Dermatólogo', RESIDENTE),
-  ('Jesus Gil', 'Odontólogo', ESPECIALISTA),
-  ('Lara Moreno', 'Dentista', ESPECIALISTA);
+  ('Jose Eusebio', 'Dermatólogo', "RESIDENTE"),
+  ('Jesus Gil', 'Odontólogo', "ESPECIALISTA"),
+  ('Lara Moreno', 'Dentista', "ESPECIALISTA");
 
 DROP TABLE IF EXISTS pacientes;
 CREATE TABLE pacientes (
