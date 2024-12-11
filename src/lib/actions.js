@@ -8,15 +8,20 @@ export async function login(formData) {
   const LOGIN_URL = '/'
 
   // Obtener usuario datos del formulario
-  const name = formData.get('name') || 'jose'
-  const email = formData.get('email') || 'jose@jose.com'
-  const password = formData.get('password') || '1234'
+  const name = formData.get('name') || 'medico1'
+  const password = formData.get('password') || 'medico1'
   const callbackUrl = formData.get('callbackUrl') || LOGIN_URL
 
-  // Comprobar si credenciales son válidas
-  const authenticated = true  // suponemos que son válidas
+  const medicos = [
+    { name: 'medico1', key: 'medico1' },
+    { name: 'medico2', key: 'medico2' },
+  ]
 
-  if (!authenticated) return
+  const medicoEncontrado = medicos.find((medico) =>
+    (medico.name === name && medico.key === key)
+  )
+
+  if (!medicoEncontrado) return
 
   // Si hay autenticación correcta, creamos cookie de sesión
   await setCookie('session', { name, email, password });
