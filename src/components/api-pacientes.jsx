@@ -7,7 +7,7 @@ async function obtenerPacientes(query) {
     const pacientes = await response.json()
 
     // Introducimos un retardo artificial
-    await new Promise(resolve => setTimeout(resolve, 2000))
+    //await new Promise(resolve => setTimeout(resolve, 2000))
 
     return pacientes.filter(paciente => paciente.nombre.toLowerCase().includes(query))
 }

@@ -8,7 +8,7 @@ async function obtenerMedico(id) {
     const medico = await response.json()  
 
     // Introducimos un retardo artificial
-    // await new Promise(resolve => setTimeout(resolve, 2000))
+    await new Promise(resolve => setTimeout(resolve, 2000))
 
     return medico
 }
