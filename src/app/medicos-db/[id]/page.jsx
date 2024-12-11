@@ -1,27 +1,29 @@
 import Link from "next/link";
 import { notFound } from 'next/navigation'
+import mysql from '@/lib/mysql'
 
 
 async function obtenerMedico(id) {
-    const response = await fetch('http://localhost:4000/medicos/' + id)
-    if (!response.ok) notFound()
-    const medico = await response.json()  
+    const sql = 'select * from medicos where id = ?';
+    const values = [id]
+    const [rows] = await mysql.query(sql, values);
 
     // Introducimos un retardo artificial
     // await new Promise(resolve => setTimeout(resolve, 2000))
 
-    return medico
+    return rows[0]
 }
 
 
-async function MedicPage({ params }) {
-
+async function MedicoPage({ params }) {
     const { id } = await params
     const medico = await obtenerMedico(id)
 
+    if (!medico) notFound()
+
     return (
         <section className="min-h-screen max-w-[1024px] mx-auto px-10 py-10">
-            <Link href="/medicos-api" className="fixed p-2 bg-orange-300 rounded-full"> &lt;- Volver </Link>
+            <Link href="/medicos-db" className="fixed p-2 bg-orange-300 rounded-full"> &lt;- Volver </Link>
             <h1 className='py-10 text-3xl text-blue-500 text-center border-b-4 border-b-blue-500'>
                 Medico #{medico.id}
             </h1>
@@ -34,4 +36,4 @@ async function MedicPage({ params }) {
     );
 }
 
-export default ProductPage;
+export default MedicoPage;

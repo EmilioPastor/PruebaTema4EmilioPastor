@@ -1,14 +1,13 @@
-import Productos from "@/components/db-productos";
-import ProductoNuevo from "@/components/db-producto-nuevo";
-import { Suspense } from "react";
 import Link from "next/link";
 import Fallback from "@/components/fallback";
+import Medicos from "@/components/api-medicos";
+import MedicoNuevo from "@/components/api-medico-nuevo";
+import { Suspense } from "react";
 
 
 
-
-async function ProductosPage({ searchParams }) {
-    const {query} = await searchParams;
+async function MedicosPage({ searchParams }) {
+    const { query } = await searchParams;
 
     // Introducimos un retardo artificial
     // await new Promise(resolve => setTimeout(resolve, 2000))
@@ -18,18 +17,18 @@ async function ProductosPage({ searchParams }) {
             <Link href="/" className="fixed text-4xl p-2 bg-orange-300 rounded-full">🏠</Link>
 
             <h1 className='py-10 text-3xl text-blue-500 text-center border-b-4 border-b-blue-500'>
-                BASE DE DATOS
+                API REST
             </h1>
-          
-            <Suspense fallback={ <Fallback>Nuevo producto ... </Fallback> }>
-                <ProductoNuevo  />
+
+            <Suspense fallback={<Fallback>Nuevo medico ... </Fallback>}>
+                <MedicoNuevo />
             </Suspense>
 
-            <Suspense fallback={ <Fallback>Obteniendo productos ... </Fallback> }>
-                <Productos query={query || ''} />
+            <Suspense fallback={<Fallback>Obteniendo datos ... </Fallback>}>
+                <Medicos query={query || ''} />
             </Suspense>
         </section>
     );
 }
 
-export default ProductosPage;
+export default MedicosPage;
