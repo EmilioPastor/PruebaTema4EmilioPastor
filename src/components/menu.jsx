@@ -6,11 +6,11 @@ import { usePathname } from "next/navigation";
 const menu = [
     {
         text: 'Medicos Api',
-        href: '/'
+        href: 'C:\Users\emili\Proyectos\pruebatema4emiliopastor\src\app\medicos-api\[id]\page.jsx'
     },
     {
         text: 'Medicos BBDD',
-        href: '/dashboard'
+        href: '/medicos-db'
     },
     {
         text: 'Pacientes API',

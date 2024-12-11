@@ -11,7 +11,7 @@ async function MedicosPage({ searchParams }) {
     const {query} = await searchParams;
 
     // Introducimos un retardo artificial
-    // await new Promise(resolve => setTimeout(resolve, 2000))
+    await new Promise(resolve => setTimeout(resolve, 2000))
 
     return (
         <section className="min-h-screen max-w-[1024px] mx-auto px-10 py-10">
@@ -22,11 +22,11 @@ async function MedicosPage({ searchParams }) {
             </h1>
           
             <Suspense fallback={ <Fallback>Nuevo medico ... </Fallback> }>
-                <ProductoNuevo  />
+                <MedicoNuevo  />
             </Suspense>
 
             <Suspense fallback={ <Fallback>Obteniendo medicos ... </Fallback> }>
-                <Productos query={query || ''} />
+                <Medicos query={query || ''} />
             </Suspense>
         </section>
     );
