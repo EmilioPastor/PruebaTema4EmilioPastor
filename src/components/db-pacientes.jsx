@@ -29,27 +29,27 @@ async function eliminarPaciente(formData) {
 }
 
 
-async function Clientes({ query }) {
+async function Pacientes({ query }) {
 
-    const clientes = await obtenerClientes(query)
+    const pacientes = await obtenerPacientes(query)
 
     return (
         <>
             <h1 className='text-2xl text-slate-600 py-2  mb-2 border-b-2 border-b-slate-600'>
-                Listado de clientes
+                Listado de pacientes
             </h1>
 
             <Buscar />
 
             <div className='flex flex-col'>
-                {clientes.sort((a, b) => a.createdAt - b.createdAt).reverse()  // Orden inverso de tiempo   
-                    .map((cliente) => (
-                        <div key={cliente.id} className='p-2 odd:bg-slate-100 flex justify-between'>
-                            <Link href={`/clientes-db/${cliente.id}`}>{cliente.nombre}</Link>
+                {pacientes.sort((a, b) => a.createdAt - b.createdAt).reverse()  // Orden inverso de tiempo   
+                    .map((nuevoPaciente) => (
+                        <div key={nuevoPaciente.id} className='p-2 odd:bg-slate-100 flex justify-between'>
+                            <Link href={`/pacientes-db/${nuevoPaciente.id}`}>{paciente.nombre}</Link>
                             <div className='flex gap-6'>
                                 <form>
-                                    <input type="hidden" name='id' value={cliente.id} />
-                                    <button formAction={eliminarCliente} title='ELIMINAR'>❌</button>
+                                    <input type="hidden" name='id' value={paciente.id} />
+                                    <button formAction={eliminarPaciente} title='ELIMINAR'>❌</button>
                                 </form>
                             </div>
                         </div>
@@ -61,7 +61,7 @@ async function Clientes({ query }) {
     )
 }
 
-export default Clientes
+export default Pacientes
 
 
 

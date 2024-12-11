@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 const menu = [
     {
         text: 'Medicos Api',
-        href: 'C:\Users\emili\Proyectos\pruebatema4emiliopastor\src\app\medicos-api\[id]\page.jsx'
+        href: '/medicos-api'
     },
     {
         text: 'Medicos BBDD',
@@ -14,11 +14,11 @@ const menu = [
     },
     {
         text: 'Pacientes API',
-        href: '/acerca'
+        href: '/pacientes-api'
     },
     {
         text: 'Pacientes BBDD',
-        href: '/'
+        href: '/pacientes-db'
     }
 ]
 
