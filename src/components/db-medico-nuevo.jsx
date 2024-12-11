@@ -31,8 +31,8 @@ function MedicoNuevo() {
             <input required id='perfil' name='perfil' type='number' step='0.01' className='p-1 border border-slate-200 focus:outline-blue-300 text-lg' />
 
             <div className='col-span-2 grid gap-2'>
-                <button formAction={nuevoProducto} className='bg-green-600 text-white px-4 py-2 rounded-xl'>
-                    Guardar producto
+                <button formAction={nuevoMedico} className='bg-green-600 text-white px-4 py-2 rounded-xl'>
+                    Guardar medico
                 </button>
                 <button type='reset' className='bg-slate-600 text-white px-4 py-2 rounded-xl'>
                     Limpiar campos
