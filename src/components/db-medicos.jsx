@@ -11,7 +11,7 @@ async function obtenerMedicos(query) {
     const [medicos] = await mysql.query(sql, values);
     
     // Introducimos un retardo artificial
-    // await new Promise(resolve => setTimeout(resolve, 2000))
+    await new Promise(resolve => setTimeout(resolve, 2000))
 
     return medicos
 }

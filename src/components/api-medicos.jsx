@@ -7,7 +7,7 @@ async function obtenerMedicos(query) {
     const medicos = await response.json()
 
     // Introducimos un retardo artificial
-    // await new Promise(resolve => setTimeout(resolve, 2000))
+    await new Promise(resolve => setTimeout(resolve, 2000))
 
     return medicos.filter(medico => medico.nombre.toLowerCase().includes(query))
 }

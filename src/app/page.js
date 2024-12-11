@@ -1,5 +1,5 @@
-// Ejemplo de Cookie y JWT: https://github.com/balazsorban44/auth-poc-next
 import { Login, Logout } from "@/components/forms";
+import Menu from "@/components/menu";
 import { login, logout } from "@/lib/actions";
 import { getCookie } from "@/lib/cookies";
 import Link from "next/link";
@@ -13,6 +13,7 @@ export default async function Page({ searchParams }) {
 
   return (
     <>
+      <Menu></Menu>
       <div className="text-4xl font-bold text-blue-300 text-center">
         <Link href="/" className="font-bold hover:underline" >
           Página principal

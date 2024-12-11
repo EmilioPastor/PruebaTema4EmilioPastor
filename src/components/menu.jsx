@@ -5,16 +5,20 @@ import { usePathname } from "next/navigation";
 
 const menu = [
     {
-        text: 'Página principal',
+        text: 'Medicos Api',
         href: '/'
     },
     {
-        text: 'Dashboard',
+        text: 'Medicos BBDD',
         href: '/dashboard'
     },
     {
-        text: 'Acerca de ...',
+        text: 'Pacientes API',
         href: '/acerca'
+    },
+    {
+        text: 'Pacientes BBDD',
+        href: '/'
     }
 ]
 
