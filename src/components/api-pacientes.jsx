@@ -53,7 +53,7 @@ async function Pacientes({ query }) {
     )
 }
 
-export default Clientes
+export default Pacientes
 
 
 

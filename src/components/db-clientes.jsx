@@ -5,27 +5,27 @@ import { revalidatePath } from 'next/cache'
 
 
 
-async function obtenerClientes(query) {
-    const sql = 'select * from `clientes` where nombre like ?';
+async function obtenerPacientes(query) {
+    const sql = 'select * from `pacientes` where nombre like ?';
     const values = [`%${query}%`]
-    const [clientes] = await mysql.query(sql, values);
+    const [pacientes] = await mysql.query(sql, values);
     
     // Introducimos un retardo artificial
     // await new Promise(resolve => setTimeout(resolve, 2000))
 
-    return clientes
+    return pacientes
 }
 
 
-async function eliminarCliente(formData) {
+async function eliminarPaciente(formData) {
     'use server'
     const id = formData.get('id')
 
-    const sql = 'delete from clientes where id = ?'
+    const sql = 'delete from pacientes where id = ?'
     const values = [id]
     await mysql.query(sql, values);
 
-    revalidatePath('/clientes-db')
+    revalidatePath('/pacientes-db')
 }
 
 
