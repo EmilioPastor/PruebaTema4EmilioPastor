@@ -1,0 +1,45 @@
+{
+  "medicos": [
+    {
+      "id": "0a8e",
+      "nombre": "Paco Lopez",
+      "especialidad": "Traumatólogo",
+      "perfil": "RESIDENTE",
+      "createdAt": "2024-11-27T18:20:46.462Z"
+    },
+    {
+      "id": "8199",
+      "nombre": "Kike Sanchez",
+      "especialidad": "Dermatólogo",
+      "perfil": "ESPECIALISTA",
+      "createdAt": "2024-11-27T18:21:12.031Z"
+    },
+    {
+      "id": "1558",
+      "nombre": "Luis Pastor",
+      "especialidad": "Odontólogo",
+      "perfil": "ESPECIALISTA",
+      "createdAt": "2024-11-27T18:21:30.251Z"
+    }
+  ],
+  "pacientes": [
+    {
+      "id": "4a53",
+      "nombre": "Pedro Aguado",
+      "localidad": "Almería",
+      "fecha_nacimiento": "1995-04-04"
+    },
+    {
+      "id": "c46b",
+      "nombre": "Miguel Jimenez",
+      "localidad": "Lugo",
+      "fecha_nacimiento": "2007-12-27"
+    },
+    {
+      "id": "ade4",
+      "nombre": "Jesus Lopez",
+      "localidad": "Montalbán de Córdoba",
+      "fecha_nacimiento": "1997-10-24"
+    }
+  ]
+}
