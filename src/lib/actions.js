@@ -13,18 +13,18 @@ export async function login(formData) {
   const callbackUrl = formData.get('callbackUrl') || LOGIN_URL
 
   const medicos = [
-    { name: 'medico1', key: 'medico1' },
-    { name: 'medico2', key: 'medico2' },
+    { name: 'medico1', password: 'medico1' },
+    { name: 'medico2', password: 'medico2' },
   ]
 
   const medicoEncontrado = medicos.find((medico) =>
-    (medico.name === name && medico.key === key)
+    (medico.name === name && medico.password === password)
   )
 
   if (!medicoEncontrado) return
 
   // Si hay autenticación correcta, creamos cookie de sesión
-  await setCookie('session', { name, email, password });
+  await setCookie('session', { name, password });
 
   redirect(callbackUrl);
 }
